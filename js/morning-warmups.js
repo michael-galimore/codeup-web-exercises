@@ -43,16 +43,22 @@
 
 // Had if(m % 3 === 0 && m % 5 === 0) {console.log(m + " FizzBuzz") last
 //instead of first.
-for (var m = 1; m <= 100; m++){
-    if(m % 3 === 0 && m % 5 === 0) {
-        console.log(m + " FizzBuzz")
-    } else if (m % 5 === 0){
-        console.log(m + " Buzz")
+// for (var m = 1; m <= 100; m++){
+//     if(m % 3 === 0 && m % 5 === 0) {
+//         console.log(m + " FizzBuzz")
+//     } else if (m % 5 === 0){
+//         console.log(m + " Buzz")
+//
+//     } else if (m % 3 === 0 ){
+//         console.log(m + " Fizz")
+//     }
+// }
 
-    } else if (m % 3 === 0 ){
-        console.log(m + " Fizz")
-    }
+
+var g = [1, 2, 3, 4]
+function secondToLast(arr){
+    return arr[arr.length - 2];
 }
-
+cosole.log(secondToLast(arr[]))
 
 
