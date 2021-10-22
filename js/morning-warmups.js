@@ -54,11 +54,25 @@
 //     }
 // }
 
+//
+// var g = [1, 2, 3, 4]
+// function secondToLast(arr){
+//     return arr[arr.length - 2];
+// }
+// cosole.log(secondToLast(arr[]))
 
-var g = [1, 2, 3, 4]
-function secondToLast(arr){
-    return arr[arr.length - 2];
+
+//Write a function named 'moveToEnd' that takes in an array, and returns the array with the original first index moved to the last index of the array.
+//
+// Example:
+// moveToEnd([1, 2, 3, 4]) 		  // returns [2, 3, 4, 1];
+// moveToEnd(['roll', 'rock', 'and']  // returns ['rock', 'and', 'roll'];
+
+
+function moveToEnd(arr){
+    var removedElement = arr.shift();
+    arr.push(removedElement);
+    return arr;
 }
-cosole.log(secondToLast(arr[]))
-
-
+console.log(moveToEnd(1,2,3,4))
+console.log(moveToEnd("roll", "rock", "and"))
