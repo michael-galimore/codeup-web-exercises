@@ -29,7 +29,7 @@ console.log(person.firstName)
      */
 
     person.sayHello = function () {
-        return "Hello from Mike G"
+        return "Hello from " + person.firstName + "" + person.lastName;
     }
 console.log(person.sayHello())
 
@@ -69,6 +69,17 @@ console.log(person.sayHello())
 //     console.log("This is " + shopper);
 // });
 // console.log()
+    function displayShopperAmount(arr){
+        arr.forEach(function(shopper){
+            if(shopper.amount > 200){
+                console.log(shopper.name + ": spent " + shopper.amount + " Which applies for discount. Discount amount: " + (shopper.amount * .12) + "The discounted price is: " + shopper.amount - (shopper.amount * .12))
+            } else {
+                console.log(shopper.name + ": spent " + shopper.amount + " Which does not apply for discount.")
+            }
+        })
+    }
+    console.log(displayShopperAmount(shoppers))
+
 
 
 
@@ -85,19 +96,48 @@ console.log(person.sayHello())
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-var book1 = {
-    title: "Angelmaker", author: "Nick Harkway",
-}
-var book2 = {
-    title: "Anabel", author: "Kathleen Winter",
-}
-var book3 = {
-        title:"Beloved", author: "Toni Morrison"
-}
-var books = [book1, book2, book3]
+// var book1 = {
+//     title: "Angelmaker", author: "Nick Harkway",
+// }
+// var book2 = {
+//     title: "Anabel", author: "Kathleen Winter",
+// }
+// var book3 = {
+//         title:"Beloved", author: "Toni Morrison"
+// }
+// var books = [book1, book2, book3]
+//
+// console.log(books[0].title)
+// console.log(books[1].author)
 
-console.log(books[0].title)
-console.log(books[1].author)
+    var books = [
+        {
+            title: "Harry Potter",
+            author: {
+            firstName: "J.K",
+                lastName: "Rowlings",
+            }
+        },
+        {
+          title: "Hunchback",
+          author: {
+              firstName: "Victor",
+              lastName: "Hugo",
+          }
+        };
+    {
+            title:
+            author: {
+                firstName:
+                lastName:
+            }
+    },
+    {
+
+    },{}
+    ]
+
+
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -122,9 +162,13 @@ console.log(books[1].author)
      *      ---
      *      ...
      */
-    var b = 0
-    for (var b = 0; b < 3; b++) {
-        console.log(books);
+    // var b = 0
+    // for (var b = 0; b < 3; b++) {
+    //     console.log(books);
+    // }
+
+    for(var j = 0; j < books.length; j++) {
+        console.log("Book number " + (j + 1) + "\nTitle: " + books[j].title + "\nAuthor: " + books[j].author.firstName + " " + books[j].author.lastName)
     }
     /**
      * Bonus:
@@ -137,4 +181,31 @@ console.log(books[1].author)
      *   `showBookInfo` function.
      */
 
+    var library = []
+    function createBook(title, author){
+        //expected input: "firstName lastName"
+        var namesArray = author.split(" ");
+        var book = {
+            title: title;
+            author: {
+                firstName: namesArray[0],
+                lastName: namesArray[1],
+            }
+        }
+        return library.push(book);
+    }
+createBook("1984","George Orwell")
+createBook("Angelmaker", "Nick Harkway")
+createBook("Beloved", "Toni Morrison")
+
+
+
+
+
+function showBookInfo(array){
+    for(var j = 0; j < books.length; j++) {
+        console.log("Book number " + (j + 1) + "\nTitle: " + books[j].title + "\nAuthor: " + books[j].author.firstName + " " + books[j].author.lastName)
+
+}
+    showBookInfo(library)
 })();
