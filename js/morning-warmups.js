@@ -69,10 +69,26 @@
 // moveToEnd(['roll', 'rock', 'and']  // returns ['rock', 'and', 'roll'];
 
 
-function moveToEnd(arr){
-    var removedElement = arr.shift();
-    arr.push(removedElement);
-    return arr;
+// function moveToEnd(arr){
+//     var removedElement = arr.shift();
+//     arr.push(removedElement);
+//     return arr;
+// }
+// console.log(moveToEnd(1,2,3,4))
+// console.log(moveToEnd("roll", "rock", "and"))
+
+
+// Warmup: Visit https://www.pokemon.com/us/pokedex/ and select one of your
+// favorite pokemon (it can be whatever you choose) and create an object variable
+// to represent the chosen pokemon. The more information you have the better! We
+// will be using this for lecture later today as well.
+
+var bulbasaur = {
+    name: "Bulbasaur",
+    type: ["grass, poison"],
+    height: {
+        feet: 2,
+        inches: 4,
+    },
+
 }
-console.log(moveToEnd(1,2,3,4))
-console.log(moveToEnd("roll", "rock", "and"))
