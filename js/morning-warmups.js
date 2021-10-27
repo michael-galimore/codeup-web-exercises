@@ -132,5 +132,17 @@ return bucket;
 
 console.log(nationalities(wrestlers))
 
+var circle = {
+    radius: 36
+}
+
+function cir(rad){
+    return (rad * rad * Math.PI);
+}
+console.log(cir(36))
 
 
+// Area of a circle is PI * radius^2
+var area = Math.PI * (Math.pow(circle.radius,2))
+
+console.log(area)
