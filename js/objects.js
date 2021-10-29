@@ -29,7 +29,7 @@ console.log(person.firstName)
      */
 
     person.sayHello = function () {
-        return "Hello from " + person.firstName + "" + person.lastName;
+        return "Hello from " + person.firstName + " " + person.lastName;
     }
 console.log(person.sayHello())
 
@@ -54,27 +54,32 @@ console.log(person.sayHello())
         {name: 'George', amount: 320}
     ];
 
-// function offer(arr) {
-// arr.forEach(function(shopper){
-//        if(shopper.amount > 200){
-//            console.log(shopper.name + "'s total was " + shopper.amount + ". " + shopper.name + "'s discount amount is " + (shopper.amount * .12) + "Their total with today's discount is " + shopper.amount - (shopper.amount * .12))
-//        } else {
-//            console.log(shopper.name + " only spent " + shopper.amount + " which does not qualify for today's discount.");
-//        }
-// })
-// };
-// console.log(offer(shoppers))
+    // I got Cameron to log but NaN for the others.
+function offer(arr) {
+arr.forEach(function(shopper){
+       if(shopper.amount > 200){
+           console.log(shopper.name + "'s total was " + shopper.amount + ". " + shopper.name + "'s discount amount is " + (shopper.amount * .12) + "Their total with today's discount is " + shopper.amount - (shopper.amount * .12))
+       } else {
+           console.log(shopper.name + " only spent " + shopper.amount + " which does not qualify for today's discount.");
+       }
+})
+};
+console.log(offer(shoppers))
 
-//     function displayShopperAmount(arr){
-//         arr.forEach(function(shopper){
-//             if(shopper.amount > 200){
-//                 console.log(shopper.name + ": spent " + shopper.amount + " Which applies for discount. Discount amount: " + (shopper.amount * .12) + "The discounted price is: " + shopper.amount - (shopper.amount * .12))
-//             } else {
-//                 console.log(shopper.name + ": spent " + shopper.amount + " Which does not apply for discount.")
-//             }
-//         })
-//     }
-//     console.log(displayShopperAmount(shoppers))
+
+
+
+    // //code used in class
+    // function displayShopperAmount(arr){
+    //     arr.forEach(function(shopper){
+    //         if(shopper.amount > 200){
+    //             console.log(shopper.name + ": spent " + shopper.amount + " Which applies for discount. Discount amount: " + (shopper.amount * .12) + "The discounted price is: " + shopper.amount - (shopper.amount * .12))
+    //         } else {
+    //             console.log(shopper.name + ": spent " + shopper.amount + " Which does not apply for discount.")
+    //         }
+    //     })
+    // }
+    // console.log(displayShopperAmount(shoppers))
 
 
 
@@ -92,47 +97,47 @@ console.log(person.sayHello())
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-// var book1 = {
-//     title: "Angelmaker", author: "Nick Harkway",
-// }
-// var book2 = {
-//     title: "Anabel", author: "Kathleen Winter",
-// }
-// var book3 = {
-//         title:"Beloved", author: "Toni Morrison"
-// }
-// var books = [book1, book2, book3]
-//
-// console.log(books[0].title)
-// console.log(books[1].author)
+var book1 = {
+    title: "Angelmaker",
+        author: {
+        firstName: "Nick ",
+            lastName:"Harkway"
+        },
+}
+var book2 = {
+    title: "Anabel",
+    author: {
+        firstName: "Kathleen ",
+        lastName: "Winter"
+    },
+}
+var book3 = {
+        title:"Beloved",
+    author: {
+            firstName: "Toni ",
+        lastName:"Morrison",
+    }
+}
+var book4 ={
+    title: "Speak",
+    author: {
+        firstName: "Laurie ",
+        lastName:"Anderson",
+    },
+}
+var book5 = {
+    title: "Caraval",
+    author: {
+        firstName: "Stephanie",
+        lastName: "Garber",
+    },
+}
+var books = [book1, book2, book3, book4, book5]
 
-    // var books = [
-    //     {
-    //         title: "Harry Potter",
-    //         author: {
-    //         firstName: "J.K",
-    //             lastName: "Rowlings",
-    //         }
-    //     },
-    //     {
-    //       title: "Hunchback",
-    //       author: {
-    //           firstName: "Victor",
-    //           lastName: "Hugo",
-    //       }
-    //     };
-    // {
-    //         title:
-    //         author: {
-    //             firstName:
-    //             lastName:
-    //         }
-    // },
-    // {
-    //
-    // },{}
-    // ]
 
+console.log(books[4].title)
+console.log(books[4].author.firstName)
+    console.log(books[4].author.lastName)
 
     /**
      * TODO:
@@ -158,14 +163,11 @@ console.log(person.sayHello())
      *      ---
      *      ...
      */
-    // var b = 0
-    // for (var b = 0; b < 3; b++) {
-    //     console.log(books);
-    // }
+    var b = 0
+    for (var b = 0; b < books.length; b++) {
+        console.log(books);
+    }
 
-    // for(var j = 0; j < books.length; j++) {
-    //     console.log("Book number " + (j + 1) + "\nTitle: " + books[j].title + "\nAuthor: " + books[j].author.firstName + " " + books[j].author.lastName)
-    // }
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
