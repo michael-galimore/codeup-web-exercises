@@ -51,7 +51,7 @@ for(var v = 0; v < names.length; v ++) {
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-//    did not get this far
+
 function first(arr) {
         return arr[0]
     }
@@ -61,9 +61,9 @@ function first(arr) {
     function last(arr) {
         return arr[arr.length - 1]
     }
-console.log(first(name))
-    console.log(second(name))
-    console.log(last(name))
+console.log(first([1, 2, 3, 4, 5]))
+    console.log(second([1, 2, 3, 4, 5]))
+    console.log(last([1, 2, 3, 4, 5]))
 
 
 
