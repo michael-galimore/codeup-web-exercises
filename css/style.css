@@ -10,12 +10,12 @@ h1,h2{
 
 }
 
-/*body{*/
-/*    background-color: yellow;*/
-/*    background-image: url(../image/7.jpg);*/
-/*    background-repeat: repeat;*/
-/*    background-size: 590px*/
-/*}*/
+body{
+    background-color: yellow;
+    background-image: url(../image/7.jpg);
+    background-repeat: repeat;
+    background-size: 590px
+}
 
 
 ol {
