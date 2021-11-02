@@ -146,3 +146,47 @@ console.log(cir(36))
 var area = Math.PI * (Math.pow(circle.radius,2))
 
 console.log(area)
+
+
+
+var groceries = [
+    {
+        name: "carrots",
+        quantity: 5
+    },{
+        name: "yams",
+        quantity: 50
+    },{
+        name: "oranges",
+        quantity: 9
+    },{
+        name: "onions",
+        quantity: 2
+    },{
+        name: "cucumbers",
+        quantity: 6
+    },{
+        name: "potatoes",
+        quantity: 8
+    }
+];
+
+
+function getHighestQuantityObject(arr) {
+    if(name.quantity > name.quantity)
+    return name + name.quantity
+}
+console.log(getHighestQuantityObject(name + name.quantity))
+
+function getHighestQuantityObject(arr) {
+    var ob = {
+        name: "something"
+        quantity: 0
+    }
+    arr.forEach(function(el){
+        if(el.quantity > ob.quantity){
+            ob = el;
+        }
+    })
+}
+console.log(getHighestQuantityObject(groceries))
