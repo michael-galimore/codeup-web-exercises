@@ -180,7 +180,7 @@ console.log(getHighestQuantityObject(name + name.quantity))
 
 function getHighestQuantityObject(arr) {
     var ob = {
-        name: "something";
+        name: "something",
         quantity: 0
     }
     arr.forEach(function(el){
@@ -218,7 +218,7 @@ var products = [
 //     }
 // }
 function sortByName(arr){
-    return arr.sort(function(a,b)) {
+    return arr.sort(function(a,b) {
         var aLower = a.name.toLowerCase();
         var bLower = b.name.toLowerCase();
         if(aLower < bLower){
@@ -227,6 +227,6 @@ function sortByName(arr){
             return 0;
         }else
             return 0;
-    }
+    })
 }
 console.log(sortByName(products))
