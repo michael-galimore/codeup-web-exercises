@@ -114,7 +114,16 @@ alert("Your tip amount is " + bill * tip + " for today.");
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
-// Did not get this far.
+
+function applyDiscount(price, discountPercentage) {
+    return (price * discountPercentage) - price;
+}
+console.log(applyDiscount(85,.35))
+
+
+
+
+
 function applyDiscount(price, discountPercentage) {
      var discount = (price * discountPercentage);
      return price - discount;

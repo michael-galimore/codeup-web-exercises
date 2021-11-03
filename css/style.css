@@ -1,0 +1,58 @@
+.fancy-header {
+    color: purple;
+    text-align: center;
+
+}
+h1,h2{
+    color: blue;
+    text-decoration: underline;
+
+
+}
+
+body{
+    background-color: yellow;
+    background-image: url(../image/7.jpg);
+    background-repeat: repeat;
+    background-size: 590px
+}
+
+
+ol {
+    list-style: georgian;
+}
+
+
+ul {
+    list-style: disc;
+}
+
+section {
+    font-family: AppleGothic, Arial, Sans-Serif;
+}
+
+table {
+    border: 9px solid orange;
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+th{
+    border: 9px solid black;
+    font-size: 90px;
+
+}
+td{
+    border: 9px solid teal;
+    font-size: 35px;
+    font-family: Comic Sans MS
+
+}
+tr{
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+

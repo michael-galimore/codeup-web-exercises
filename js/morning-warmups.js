@@ -43,16 +43,190 @@
 
 // Had if(m % 3 === 0 && m % 5 === 0) {console.log(m + " FizzBuzz") last
 //instead of first.
-for (var m = 1; m <= 100; m++){
-    if(m % 3 === 0 && m % 5 === 0) {
-        console.log(m + " FizzBuzz")
-    } else if (m % 5 === 0){
-        console.log(m + " Buzz")
+// for (var m = 1; m <= 100; m++){
+//     if(m % 3 === 0 && m % 5 === 0) {
+//         console.log(m + " FizzBuzz")
+//     } else if (m % 5 === 0){
+//         console.log(m + " Buzz")
+//
+//     } else if (m % 3 === 0 ){
+//         console.log(m + " Fizz")
+//     }
+// }
 
-    } else if (m % 3 === 0 ){
-        console.log(m + " Fizz")
-    }
+//
+// var g = [1, 2, 3, 4]
+// function secondToLast(arr){
+//     return arr[arr.length - 2];
+// }
+// cosole.log(secondToLast(arr[]))
+
+
+//Write a function named 'moveToEnd' that takes in an array, and returns the array with the original first index moved to the last index of the array.
+//
+// Example:
+// moveToEnd([1, 2, 3, 4]) 		  // returns [2, 3, 4, 1];
+// moveToEnd(['roll', 'rock', 'and']  // returns ['rock', 'and', 'roll'];
+
+
+// function moveToEnd(arr){
+//     var removedElement = arr.shift();
+//     arr.push(removedElement);
+//     return arr;
+// }
+// console.log(moveToEnd(1,2,3,4))
+// console.log(moveToEnd("roll", "rock", "and"))
+
+
+// Warmup: Visit https://www.pokemon.com/us/pokedex/ and select one of your
+// favorite pokemon (it can be whatever you choose) and create an object variable
+// to represent the chosen pokemon. The more information you have the better! We
+// will be using this for lecture later today as well.
+
+var bulbasaur = {
+    name: "Bulbasaur",
+    type: ["grass, poison"],
+    height: {
+        feet: 2,
+        inches: 4,
+    },
+
 }
 
 
+//Create a function that accepts an array as an argument,
+// and that returns an array of objects that have a nationality
+// property of “Canadian”.
 
+
+var wrestlers = [
+    {
+        name: "Bret Hart",
+        nationality: "Canadian"
+    }, {
+        name: "Shawn Michaels",
+        nationality: "American"
+    }, {
+        name: "Christian Cage",
+        nationality: "Canadian"
+    }, {
+        name: "Keiji Mutoh",
+        nationality: "Japanese"
+    }, {
+        name: "Eddy Guerrero",
+        nationality: "American"
+    }, {
+        name: "Owen Hart",
+        nationality: "Canadian"
+    }
+];
+function nationalities(arr){
+    var bucket = [];
+    arr.forEach(function (element) {
+        if(element.nationality === "Canadian"){
+            bucket.push(element);
+        }
+    });
+return bucket;
+}
+
+console.log(nationalities(wrestlers))
+
+var circle = {
+    radius: 36
+}
+
+function cir(rad){
+    return (rad * rad * Math.PI);
+}
+console.log(cir(36))
+
+
+// Area of a circle is PI * radius^2
+var area = Math.PI * (Math.pow(circle.radius,2))
+
+console.log(area)
+
+
+
+var groceries = [
+    {
+        name: "carrots",
+        quantity: 5
+    },{
+        name: "yams",
+        quantity: 50
+    },{
+        name: "oranges",
+        quantity: 9
+    },{
+        name: "onions",
+        quantity: 2
+    },{
+        name: "cucumbers",
+        quantity: 6
+    },{
+        name: "potatoes",
+        quantity: 8
+    }
+];
+
+
+function getHighestQuantityObject(arr) {
+    if(name.quantity > name.quantity)
+    return name + name.quantity
+}
+console.log(getHighestQuantityObject(name + name.quantity))
+
+function getHighestQuantityObject(arr) {
+    var ob = {
+        name: "something",
+        quantity: 0
+    }
+    arr.forEach(function(el){
+        if(el.quantity > ob.quantity){
+            ob = el;
+        }
+    })
+}
+console.log(getHighestQuantityObject(groceries))
+
+// Write a function named ‘sortByName’ that takes in an array of
+// objects, and returns an array of objects in alphabetical
+// order based on the name property.
+var products = [
+    {
+        name: 'Playstation 5',
+        price: 599.99
+    }, {
+        name: 'Logitech Wireless Mouse',
+        price: 23.99
+    }, {
+        name: 'Macbook Pro',
+        price: 1099.99
+    }, {
+        name: 'GoPro HERO10',
+        price: 399.99
+    }, {
+        name: '12" & 6" Metal Ruler Set',
+        price: 5.99
+    }]
+
+// function sortByName(arr){
+//     return arr.sort(function(a,b)){
+//         return a - b;
+//     }
+// }
+function sortByName(arr){
+    return arr.sort(function(a,b) {
+        var aLower = a.name.toLowerCase();
+        var bLower = b.name.toLowerCase();
+        if(aLower < bLower){
+            return -1;
+        } else if (aLower > bLower) {
+            return 0;
+        }else
+            return 0;
+    })
+}
+console.log(sortByName(products))
