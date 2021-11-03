@@ -1,0 +1,35 @@
+.main{
+    background-color:gray;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-between;
+}
+.set1 a {
+    display: inline-block;
+    box-sizing: border-box;
+    color: black;
+    padding: 1em;
+
+}
+logo{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+
+}
+img {
+
+
+
+}
+
+.link:hover {
+    color: blue;
+}
+
+.set2 a {
+    flex-direction: row-reverse;
+    display: inline-block;
+    color: black;
+    padding: 1em;
+}
