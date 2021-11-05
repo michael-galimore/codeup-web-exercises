@@ -1,0 +1,11 @@
+.jumbotron{
+
+}
+.jumbotron-fluid{
+    display: flex;
+}
+h1 {
+    justify-content: center;
+    width: 100%;
+    background-color: white;
+}
