@@ -1,0 +1,44 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+.message-info {
+    height: 5%;
+    background-color: skyblue;
+    color: rebeccapurple;
+    border: solid grey 2px;
+    margin-bottom: .5em;
+    width: 80%;
+    border-radius: 4px;
+}
+.message-success{
+    height: 5%;
+    background-color: lightgreen;
+    color: darkgreen;
+    margin-bottom: .5em;
+    width: 80%;
+    border: solid grey 2px;
+    border-radius: 4px;
+
+}
+.message-warning{
+    height: 5%;
+    background-color: yellow;
+    color: darkkhaki;
+    margin-bottom: .5em;
+    width: 80%;
+    border: solid grey 2px;
+    border-radius: 4px;
+
+}
+.message-error{
+    height: 5%;
+    background-color: pink;
+    color:saddlebrown;
+    width: 80%;
+    border-radius: 4px;
+    border: solid grey 2px;
+}
