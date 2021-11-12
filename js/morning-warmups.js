@@ -230,3 +230,90 @@ function sortByName(arr){
     })
 }
 console.log(sortByName(products))
+
+
+//Write a function in JavaScript that takes in an array of objects
+// and returns the object with the lowest height property.
+// Consider the following array to test your code.
+var bBallPlayers = [
+    {
+        name: "Hakeem Olajuwon",
+        height: 213
+    }, {
+        name: "Muggsy Bogues",
+        height: 160
+    }, {
+        name: "Chris Paul",
+        height: 183
+    }, {
+        name: "Bol Bol",
+        height: 218
+    }, {
+        name: "Moochie Norris",
+        height: 185
+    }, {
+        name: "Manu Ginobili",
+        height: 198
+    }
+];
+
+function lowestHeight(arr){
+    return arr.sort(function(a,b){
+        var aTall = a.height
+        var bTall = b.height
+        if(aTall < bTall){
+            return -1;
+        } else if (aTall > bTall){
+            return 0;
+        } else {
+            return 0;
+        }
+
+
+    })
+}
+
+// code used in class,
+function findShortest(arr){
+    var holdThis = {height: Number.MAX_VALUE};
+    arr.forEach(function(el) {
+        if(el.height < holdThis.height){
+            holdThis = el;
+        }
+    })
+    return holdThis;
+}
+console.log(findShortest(bBallPlayer));
+
+
+
+
+// var myCharacter = {
+//     name: 'Noe',
+//     hitPoints: 100,
+//     class: 'Warrior',
+//     abilities: {
+//         attack: function(obj) {
+//         console.log(myCharacter.name + " hit" + obj.name + " for " + myCharacter.weapon.damage + " damage!")
+//     },
+//     magicPoints: 0,
+//     weapon: {
+//         name: 'Silver Sabre',
+//         damage: 16,
+//         type: 'sword'
+//     }
+// }
+
+var enemy = {
+    name: 'Savage Orc',
+    hitPoints: 100,
+    class: 'Warrior',
+    magicPoints: 0,
+}
+
+var randomEl(["rock", "paper", "scissors", "lizard", "Spock"])
+
+function randomElement(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+console.log
