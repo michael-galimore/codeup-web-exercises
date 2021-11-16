@@ -6,12 +6,12 @@
 // by the numbers 1 through 10)
 
 
-var m = 7
-var g;
-for (var i = 1; i <= 10; i++) {
-    g = m * i;
-console.log(g)
-}
+// var m = 7
+// var g;
+// for (var i = 1; i <= 10; i++) {
+//     g = m * i;
+// console.log(g)
+// }
 
 function showMultplicationTable(num){
     for (m = 1; m <= 10; m++){
@@ -20,13 +20,6 @@ function showMultplicationTable(num){
 } showMultplicationTable(7)
 
 
-
-function showMultiplicationTable(num){
-    for(var m = 1; m <= 10; m++) {
-        var i = 7;
-       var g = m * i;
-    } console.log(g)
-}
 
 // Use a for loop and the code from the previous lessons to generate 10 random
 // numbers between 20 and 200 and output to the console whether each number is
