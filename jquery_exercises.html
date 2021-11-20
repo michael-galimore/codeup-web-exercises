@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Ways to Greet</h1>
+<p>djalskjfalsjgoeagijalksdgjaogjfaoweijgla;kjgaoegjoaijglakdsjoaeigja;ojgo</p>
+<p>djalskjfalsjgoeagijalksdgjaogjfaoweijgla;kjgaoegjoaijglakdsjoaeigja;ojgo</p>
+<p>djalskjfalsjgoeagijalksdgjaogjfaoweijgla;kjgaoegjoaijglakdsjoaeigja;ojgo</p>
+<p>djalskjfalsjgoeagijalksdgjaogjfaoweijgla;kjgaoegjoaijglakdsjoaeigja;ojgo</p>
+<p>djalskjfalsjgoeagijalksdgjaogjfaoweijgla;kjgaoegjoaijglakdsjoaeigja;ojgo</p>
+<p>djalskjfalsjgoeagijalksdgjaogjfaoweijgla;kjgaoegjoaijglakdsjoaeigja;ojgo</p>
+<p>djalskjfalsjgoeagijalksdgjaogjfaoweijgla;kjgaoegjoaijglakdsjoaeigja;ojgo</p>
+<p>djalskjfalsjgoeagijalksdgjaogjfaoweijgla;kjgaoegjoaijglakdsjoaeigja;ojgo</p>
+<div id="div1">
+    <li>Hello</li>
+    <li>Hi</li>
+    <li>What's Up</li>
+    <li>How's it going?</li>
+</div>
+<h1 id="spanish" class="codeup">Hola</h1>
+<p>Que pasa?</p>
+<h1 id="german" class="codeup">Hallo</h1>
+<div id="div2">
+<ul id="codeup">Kon'nichiwa</ul>
+<ul>Bonjour</ul>
+<ul>'ahlan</ul>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+        // var contents = $('hi').html();
+        // alert(contents);
+        // $('.codeup').css('border', 'red solid 1px');
+        // $('li').css('font-size', '20px');
+        // // $('h1, p, li').css('background-color', 'saddlebrown');
+        // var contentsOfH = $('h1').html();
+        // alert(contentsOfH);
+        // $('h1, p, li').css('font-size', '40px');
+$('#spanish').click(function(){
+    $(this).css('background-color', 'orange');
+})
+    $('p').dblclick(function (){
+        $(this).css('font-size', '18px');
+    })
+        $('li').hover(function(){
+            $(this).css('color', 'red');
+        },
+        function(){
+            $(this).css('color', 'black')
+        })
+
+    });
+</script>
+</body>
+</html>
