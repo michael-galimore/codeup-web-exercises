@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RPS</title>
+    <link rel="stylesheet" href="css/RPS.css">
+    <script src="js/RPS.js"></script>
+
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<h1 align="center">Welcome to RPS</h1>
+<section>
+    <p align="center">Can you beat the android at a game of RPS to save the human race?</p>
+<p align="center">Press the button to play.</p>
+   <div>
+       <h1 class="scoreboard">Scoreboard</h1>
+       <table align="center" class="board">
+           <tr>
+               <td class="under">Human</td>
+               <td class="under">Android</td>
+
+           </tr>
+           <tr>
+               <td id="userChoice">0</td>
+               <td id="androidChoice">0</td>
+
+           </tr>
+       </table>
+    </div>
+    <h4 align="center" id="result">result</h4>
+    <div align="center">
+    <button type="button" class="button" id="rock">Rock</button>
+    <button type="button" class="button" id="paper">Paper</button>
+    <button type="button" class="button" id="scissors">Scissors</button>
+    </div>
+</section>
+<script src="js/RPS.js"></script>
+</body>
+</html>

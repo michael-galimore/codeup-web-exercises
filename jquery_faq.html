@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        dt{
+            font-weight: bolder;
+            font-size: 20px;
+            text-decoration: underline;
+            padding: 20px
+        }
+        .invisible {
+            visibility: hidden;
+        }
+    </style>
+
+<body>
+<h1>Elder Scrolls Online Slang and Abbreviations</h1>
+<dl>
+    <dt>DK</dt>
+    <dd class="invisible visible">Class of Dragonknight</dd>
+
+    <dt>NB</dt>
+    <dd class="invisible visible">Class of Nightblade</dd>
+
+    <dt>Sorc</dt>
+    <dd class="invisible visible">Class of Sorcerer</dd>
+
+    <dt>Temp</dt>
+    <dd class="invisible visible">Class of Templar</dd>
+
+    <dt>Build</dt>
+    <dd class="invisible visible">The heart, soul and life force of every character.
+        A character without a build is like a human without a heart.
+        A build combines your primary attributes (Health, Magicka, Stamina), your secondary attributes
+        (Armor, Weapon Damage etc.) your class, your gear, your combination of abilities,
+        your race and your buffs into your character's overall proficiency.</dd>
+
+    <dt>Glass Cannon</dt>
+    <dd class="invisible visible">A character that deals a high amount of damage, but has poor survivability.
+    </dd>
+
+    <dt>Titanium Teddybear</dt>
+    <dd class="invisible visible">The opposite of a glass cannon, a character who has great survivability but poor damage output.</dd>
+
+    <dt>Squishy</dt>
+    <dd class="invisible visible">A character that dies alot. Sorcerers are known for being particularly squishy.</dd>
+
+    <dt>OP</dt>
+    <dd class="invisible visible">Anything that is overpowered, for example, the Jesus Beam, Lethal Arrow, Jason Leavey's Hair and Headnetch.</dd>
+
+    <dt>Jesus Beam</dt>
+    <dd class="invisible visible">Radiant Destruction, the spell notorious for being arguably the most powerful spell in the game.</dd>
+
+</dl>
+<a href="#" id="toggles">toggle</a>
+
+<h3 class="game">ESPN NFL 2k5</h3>
+<ul>
+    <li>Arguably one of the best football games made.</li>
+    <li>Launched July 20th 2004</li>
+    <li>Price tag was 19.99</li>
+    <li>Had a first person franchise</li>
+</ul>
+<h3 class="game">Grand Theft Auto San Andreas</h3>
+<ul>
+    <li>Largest GTA</li>
+    <li>Los Santos has famous landmarks</li>
+    <li>Tallest moutain in the game in 800 meters</li>
+    <li>You can go skydiving</li>
+</ul>
+
+<h3 class="game">Final Fantasy X</h3>
+<ul>
+    <li>Tidus was going to originally have black hair</li>
+    <li>Tidus means sun</li>
+    <li>Tidus is pronounced Teedus</li>
+    <li>He is the only main protagonist not to complete his journey.</li>
+</ul>
+<button id="yellow">Press me</button>
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/jquery_faq.js"></script>
+<script>
+
+$(document).ready(function (){
+    $("#toggles").click(function(e){
+        e.preventDefault();
+        // $('.invisible').toggleClass('visible')
+        $('dd').toggleClass("invisible")
+
+    });
+    $('#yellow').click(function (e){
+       e.preventDefault();
+       $('li').next().next().next().css('background-color', 'yellow');
+    })
+
+    $('.game').click(function (){
+        $('li').each(function (index){
+            if(index % 4 === 0){
+                $(this).css('font-weight', 'bold')
+    }
+})
+
+    })
+$('li').click(function(){
+    $('li').each(function (index){
+        if(index % 4 === 0)
+        $(this).css('color', 'blue')
+    })
+})
+});
+</script>
+</body>
+</html>
+<!--$('li').each(function(index) {
+    if (index % 2 !== 0) {
+        $(this).css('background-color', '#FF0');
+    }
+});-->

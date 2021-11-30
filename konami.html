@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Konami Code</title>
+    <style>
+
+    </style>
+</head>
+<body id="main">
+
+<h1 id="kcode">Konami Code</h1>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="/js/jquery.js"></script>
+<div id="pic">
+<img id="picture" src="image/contra.jpeg" alt="">
+</div>
+<script>
+
+    "use strict";
+$(document).ready(function(){
+
+    var input = [];
+    var konamiCode = "38,38,40,40,37,39,37,39,66,65,13"
+
+    $(document).keydown(function(event){
+        input.push(event.keyCode);
+        if(input.toString().indexOf(konamiCode) >= 0 ){
+            alert("You have added 30 lives!")
+
+        }
+
+        console.log(event.keyCode);
+
+    });
+
+
+    var mainContent = $('#main');
+    mainContent.keypress(function(e){
+        if(input.toString().indexOf(konamiCode) >= 0 ){
+            $('#main').css('background-color', 'grey');
+        }
+    })
+
+
+// var konami = $('#kcode');
+//     konami.keydown(function (e){
+//         input.push(e.keyCode);
+//         if(input.toString().indexOf(konamiCode) >= 0 ){
+//             $('#kcode').css('background-color', 'red');
+//         }
+//     })
+
+
+
+
+})
+
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+body {
+    font-family: "Comic Sans MS", serif;
+    font-size: 25px;
+    color: darkblue;
+    background-color: slategrey;
+}
+.scoreboard{
+    margin: auto;
+    width: 7.4em;
+    border: solid black 10px;
+}
+td{
+    padding: 45px;
+}
