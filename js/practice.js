@@ -81,9 +81,16 @@ console.log(firstName, lastName);
 
 // Immediately Invoked Function Expression (IIFE)
 
-(funciton () {
+(function () {
     var ifvVar = "I am local to the IIFE"
 })();
 
 console.log(ifyVar)
+
+
+function allIndexesOf(){
+
+}
+
+
 

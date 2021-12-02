@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
+    <style>
+        error-message{
+            display: none;
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <main>
-    <form action="#">
+    <form name="myForm" action="#" onsubmit="return validForm()" method="post">
         <fieldset class="width-80">
             <div class="form-group">
                 <label for="username" class="form-label">Username</label>
@@ -17,9 +23,43 @@
                 <label for="password" class="form-label">Password</label>
                 <input type="password" id="password" name="password" class="form-control">
             </div>
+            <small id="error-message"> wrong password</small>
             <button class="btn btn-block">Login</button>
         </fieldset>
     </form>
 </main>
+<script>
+    $(document).ready(function (){
+
+
+   //  var submitButton =  document.querySelector('#btn-submit');
+   //  var errorMessage = document.querySelector('#error-message');
+   //  var usernameInput =document.querySelector("#username");
+   //  var passwordInput =document.querySelector("#password");
+   //
+   //  var username = 'regulus2021';
+   //  var password = "gocodeup";
+   //
+   // submitButton.addEventListener('click', function(){
+   //      event.preventDefault();
+   //      if(usernameInput.value !== username && passwordInput.value)
+   // })
+
+    var submitButton = $('#btn-submit');
+    var errorMessage = $('#error-message');
+    var usernameInput = $('#username');
+    var passwordInput = $('#password');
+
+    submitButton.click(function (event){
+        event.preventDefault();
+        if(usernameInput.val() !== usernameInput || passwordInput.val() !== passwordInput){
+            errorMessage.css('display', 'inline-block');
+        }
+    })
+
+    })
+</script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
 </body>
 </html>
