@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script src ="js/keys.js"></script>
+<script>
+    $.get("https://api.openweathermap.org/data/2.5/onecall?lat=29.7604&lon=-95.3698&exclude=minutely,hourly&units=imperial&appid=" + WEATHER_KEY).done(function(data){
+
+        console.log(data)
+    })
+
+    //Easier to read
+    $.get("https://api.openweathermap.org/data/2.5/onecall", {
+        lat: 29.7604,
+        lon: -95.3698,
+        exclude: "minutely,hourly",
+        units: "imperial",
+        APPID: WEATHER_KEY
+    }).done(function(data){
+        console.log(data)
+        //get day  daily[0] would be today and then the days progress
+        console.log(new Date (data.daily[0].dt * 1000));
+        console.log(new Date (data.daily[1].dt * 1000));
+        console.log(new Date (data.daily[3].dt * 1000));
+    })
+</script>
+</body>
+</html>
