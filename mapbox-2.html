@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New York</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id='map' style='width: 400px; height: 300px;'></div>
+<h1 id="coordinates"></h1>
+<script src ="js/keys.js"></script>
+
+
+
+<script>
+    mapboxgl.accessToken = MAPBOX_KEY;
+    const map = new mapboxgl.Map({
+        container: 'map', // container ID
+        style: 'mapbox://styles/mapbox/streets-v11', // style URL
+        center: [-73.99207775130611, 40.73670263703375], // starting position [lng, lat]
+        zoom: 8 // starting zoom
+    });
+
+    var statue = new mapboxgl.Marker({
+        color: 'saddlebrown'
+    }).setLngLat([-74.0466891 ,40.6892534]).setDraggable(true)
+    statue.addTo(map)
+
+    var poppin = new mapboxgl.Popup()
+    .setLngLat(statue.getLngLat())
+    .setHTML("<h4>Statue of Liberty</h4>")
+    .addTo(map)
+
+
+    //Bonus attempted
+//     statue.on('dragend', function(){
+//         statue.getLngLat().setHTML("<h1>statue</h1>")
+//     })
+//
+// //    Bonus code used
+//     statue.on('dragend', function(){
+//         $('#coordinates').html('Current Location ' + statue.getLngLat())
+//     })
+</script>
+</body>
+</html>
