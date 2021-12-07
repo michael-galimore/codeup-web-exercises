@@ -10,7 +10,12 @@
     margin-left: auto;
     margin-right: auto;
     width: 40%;
-
-
 }
-
+.title{
+    background-color: darkolivegreen;
+    color: #f5af13;
+    font-size: 30px;
+}
+.card{
+    background-color: #f5af13;
+}
