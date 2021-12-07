@@ -20,13 +20,14 @@ function geocode(search, token) {
         .then(function(res) {
             return res.json();
             // to get all the data from the request, comment out the following three lines...
-        // }).then(function(data) {
-        //     return data.features[0].center;
+        }).then(function(data) {
+            return data.features[0].center;
         });
 }
-geocode("San Antonio", MAPBOX_KEY).then(function(results) {
-console.log(results)
-})
+
+// geocode("San Antonio", MAPBOX_KEY).then(function(results) {
+// console.log(results)
+// })
 
 /***
  * reverseGeocode is a method to search for a physical address based on inputted coordinates
@@ -49,7 +50,7 @@ function reverseGeocode(coordinates, token) {
             return res.json();
         })
         // to get all the data from the request, comment out the following three lines...
-        // .then(function(data) {
-        //     return data.features[0].place_name;
-        // });
+        .then(function(data) {
+            return data.features[0].place_name;
+        });
 }
