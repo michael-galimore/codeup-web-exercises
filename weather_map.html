@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="js/weather_map.css">
+    <style>
+        body{
+            background-color: darkolivegreen;
+        }
+        .title{
+
+        }
+        .bttn{
+            background-color: #1a73e8;
+        }
+        #coordinates{
+            color: #f5af13;
+        }
+    </style>
+</head>
+<body>
+<!--title bar-->
+<div class="title">Weather App</div>
+
+<!--search bar-->
+<input id="search" type="text" placeholder="Enter Location Here">
+
+
+<!--button-->
+<button id="btn" class="btn">Submit</button>
+
+<div><h3 class="current">Current</h3></div>
+
+
+<!--Day 1-->
+<div id="container">
+<div class="card" style="width: 18rem;" >
+<!--    <img src="..." class="card-img-top" alt="...">-->
+    <div class="card-body">
+        <p class="day" class="card-text"></p>
+        <p class="tempMax"></p>
+        <p class="tempMin"></p>
+        <p class="w"></p>
+
+    </div>
+</div>
+
+<!--Day 2-->
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <p class="day1" class="card-text"></p>
+        <p class="tempMax1"></p>
+        <p class="tempMin1"></p>
+        <p class="w1"></p>
+    </div>
+</div>
+
+<!--Day 3-->
+<div class="card" style="width: 18rem;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <p class="day2"class="card-text"></p>
+        <p class="tempMax2"></p>
+        <p class="tempMin2"></p>
+        <p class="w2"></p>
+    </div>
+</div>
+
+<!--Day 4-->
+<div class="card" style="width: 18rem;">
+<img src="..." class="card-img-top" alt="...">
+<div class="card-body">
+    <p class="day3"class="card-text"></p>
+    <p class="tempMax3"></p>
+    <p class="tempMin3"></p>
+    <p class="w3"></p>
+</div>
+</div>
+
+<!--Day 5-->
+<div class="card" style="width: 18rem;">
+<img src="..." class="card-img-top" alt="...">
+<div class="card-body">
+    <p class="day4"class="card-text"></p>
+    <p class="tempMax4"></p>
+    <p class="tempMin4"></p>
+    <p class="w4"></p>
+</div>
+</div>
+</div>
+
+<!--Div for map and styling-->
+<style>
+    .mapboxgl-popup {
+        max-width: 400px;
+        font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    }
+</style>
+<div id='map' style='width: 650px; height: 400px;'></div>
+<h1 id="coordinates"></h1>
+
+
+
+
+
+
+
+
+
+<!--jQuery-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<!--keys-->
+<script src ="js/keys.js"></script>
+<script src = 'js/mapbox-geocoder-utils.js'></script>
+
+
+<script>
+    $(document).ready(function (){
+
+        //    Map
+        mapboxgl.accessToken = MAPBOX_KEY;
+        const map = new mapboxgl.Map({
+            container : 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-98.48615, 29.426827],
+            zoom: 12
+        });
+
+        //Maker that is draggable
+        var placer = new mapboxgl.Marker({
+            color: 'saddlebrown'
+        }).setLngLat([-98.48615, 29.426827]).setDraggable(true)
+        placer.addTo(map)
+        placer.on('dragend', function(){
+            $('#coordinates').html('Current Location ' + placer.getLngLat())
+        })
+
+        //Geocode
+        geocode("San Antonio", MAPBOX_KEY).then(function(results) {
+            $('.current').html(geocode)
+        })
+
+        initialize()
+
+        $('#btn').click(function(){
+            var address = $('#search').val()
+            geocode(address,MAPBOX_KEY).then(function(results){
+                console.log(results)
+                var lng = results[0]
+                var lat = results[1]
+                placer.setLngLat([lng,lat])
+                    .addTo(map)
+                map.setCenter([lng,lat])
+            })
+        })
+
+        function initialize (){
+            var lat = 29.426827
+            var lng = -98.48615
+            placer.setLngLat([lng, lat])
+            .addTo(map)
+            map.setCenter([lng, lat])
+            weather(lat, lng)
+        }
+        function weather (lat, lng) {
+            $.get("https://api.openweathermap.org/data/2.5/onecall", {
+                lat: lat,
+                lon: lng,
+                exclude: "minutely,hourly",
+                units: "imperial",
+                APPID: WEATHER_KEY
+            }).done(function (data) {
+                console.log(data)
+
+
+                //    Dates for cards
+
+
+                var tempMax = data.daily[0].temp.max
+                var tempMin = data.daily[0].temp.min
+                var tempMax1 = data.daily[1].temp.max
+                var tempMin1 = data.daily[1].temp.min
+                var tempMax2 = data.daily[2].temp.max
+                var tempMin2 = data.daily[2].temp.min
+                var tempMax3 = data.daily[3].temp.max
+                var tempMin3 = data.daily[3].temp.min
+                var tempMax4 = data.daily[4].temp.max
+                var tempMin4 = data.daily[4].temp.min
+                var weather = data.daily[0].weather[0].description
+                var weather1 = data.daily[1].weather[0].description
+                var weather2 = data.daily[2].weather[0].description
+                var weather3 = data.daily[3].weather[0].description
+                var weather4 = data.daily[4].weather[0].description
+                var day1 = new Date(data.daily[0].dt * 1000)
+                var day2 = new Date(data.daily[1].dt * 1000)
+                var day3 = new Date(data.daily[2].dt * 1000)
+                var day4 = new Date(data.daily[3].dt * 1000)
+                var day5 = new Date(data.daily[4].dt * 1000)
+
+
+                //day 1
+
+                $('.day').html(day1)
+                $('.tempMax').html("High for today: " + Math.ceil(tempMax))
+                $('.tempMin').html("Low for today : " + Math.ceil(tempMin))
+                $('.w').html(weather)
+
+
+                //day 2
+                $('.day1').html(day2)
+                $('.tempMax1').html("High for today: " + Math.ceil(tempMax1))
+                $('.tempMin1').html("Low for today : " + Math.ceil(tempMin1))
+                $('.w1').html(weather1)
+
+                //day 3
+                $('.day2').html(day3)
+                $('.tempMax2').html("High for today: " + Math.ceil(tempMax2))
+                $('.tempMin2').html("Low for today : " + Math.ceil(tempMin2))
+                $('.w2').html(weather2)
+
+                //day 4
+                $('.day3').html(day4)
+                $('.tempMax3').html("High for today: " + Math.ceil(tempMax3))
+                $('.tempMin3').html("Low for today : " + Math.ceil(tempMin3))
+                $('.w3').html(weather3)
+
+                //day 5
+                $('.day4').html(day5)
+                $('.tempMax4').html("High for today: " + Math.ceil(tempMax4))
+                $('.tempMin4').html("Low for today : " + Math.ceil(tempMin4))
+                $('.w4').html(weather4)
+
+            })
+
+
+
+
+
+        }})
+</script>
+</body>
+</html>
