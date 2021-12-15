@@ -1,0 +1,14 @@
+body{
+    color: slategrey;
+    font-family: "Comic Sans MS";
+    background-color: indigo;
+}
+#products {
+    /*border: solid 5px limegreen;*/
+}
+td{
+    border: solid 5px limegreen;
+}
+th{
+    border: solid 5px limegreen;
+}
