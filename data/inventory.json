@@ -3,7 +3,8 @@
         "title": "Hammer",
         "quantity": 25,
         "categories": [
-            "tool"
+            "tool",
+            "powered by arm"
         ],
         "price": 20
     }, {
@@ -11,7 +12,7 @@
         "quantity": 5,
         "categories": [
             "tool",
-            "powered"
+            "powered by battery"
         ],
         "price": 100
     }, {
@@ -19,7 +20,7 @@
         "quantity": 5,
         "categories": [
             "tool",
-            "gas",
+            "gas powered",
             "outdoor"
         ],
         "price": 200
@@ -27,20 +28,23 @@
         "title": "Screwdrivers",
         "quantity": 25,
         "categories": [
-            "tool"
+            "tool",
+            "powered by hand"
         ],
         "price": 10
     }, {
     "title": "Wrench",
     "quantity": 12,
     "categories": [
-        "tool"
-    ]
+        "tool",
+        "powered by hand"
+    ], "price": 5
     }, {
     "title": "Saw",
     "quantity": 21,
     "categories": [
-        "tool"
-    ]
+        "tool",
+        "powered by arm"
+    ], "price": 10
 }
 ]

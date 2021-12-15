@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Online Store</title>
+    <link rel="stylesheet" href="css/ajax-store.css">
 </head>
 <body>
 
@@ -18,6 +19,8 @@
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
+
+<button onClick="window.location.reload();">Refresh</button>
 
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
@@ -37,10 +40,12 @@
     $.get('/data/inventory.json').done(function (products){
         $('#insertProducts').html();
         products.forEach(function (product){
-            var title = "<tr>" + "<td>" + product.title + "</td>" + "</tr>";
-            var quantity = "<tr>" + "<td>" + product.quantity + "</td>" + "</tr>";
-            var categories = "<tr>" + "<td>" + product.categories + "</td>" + "</tr>";
-            $("#insertProducts").append(title, quantity, categories);
+            var title = "<tr>" + "<th>" + product.title + "</th>";
+            var quantity = "<td>" + product.quantity + "</td>";
+            var price = "<td>" + product.price + "</td>";
+            var categories = "<td>" + product.categories + "</td>" + "</tr>";
+
+            $("#insertProducts").append(title+quantity+price+categories);
         })
     })
 
