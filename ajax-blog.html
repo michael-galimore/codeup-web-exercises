@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body{
+            background-color: black;
+            color: lawngreen;
+            font-size: 25px;
+            font-family: "Comic Sans MS", serif;
+        }
+        #first{
+            color: black;
+            background-color: lawngreen;
+        }
+        .xbox{
+            height: 100px;
+            width: 100px;
+
+        }
+    </style>
+</head>
+<body>
+<div id="first">
+        <h1 align="center"><img class="xbox" src="image/halo.jpeg">Blogz<img class="xbox" src="image/halo.jpeg"></h1>
+</div>
+
+<div id="posts">
+
+</div>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+
+<script>
+    (function (){
+        "use strict";
+
+        $.get('/data/blog.json').done(function (posts){
+            console.log(posts)
+        })
+
+
+        $.get('/data/blog.json').done(function (posts) {
+            $("#posts").html();
+            posts.forEach(function (post) {
+                var title = "<ul>" + "<li>" + post.title + "</li>";
+                var content = "<ul>" + "<li>" + post.content + "</li>";
+                var categories = "<ul>" + "<li>" + post.categories + "</li>";
+                var date = "<ul>" + "<li>" + post.date + "</li>" + "</ul>";
+                $("#posts").append(title + content + categories + date);
+                console.log(title + content + categories + date)
+            })
+
+
+        })
+
+
+
+
+    })();
+</script>
+</body>
+</html>

@@ -1,14 +1,23 @@
 body{
-    color: slategrey;
+
     font-family: "Comic Sans MS";
-    background-color: indigo;
+
 }
 #products {
-    /*border: solid 5px limegreen;*/
+    /*margin-top: 50px;*/
 }
 td{
-    border: solid 5px limegreen;
+    background-color: white;
+    border: solid 5px #eeeeee;
 }
 th{
-    border: solid 5px limegreen;
+    background-color: white;
+    border: solid 5px #eeeeee;
+}
+.silly{
+    height: 50px;
+    width: 50px
+}
+.back{
+    background-color: black;
 }

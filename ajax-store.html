@@ -3,12 +3,42 @@
 <head>
     <title>Online Store</title>
     <link rel="stylesheet" href="css/ajax-store.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Remove the navbar's default rounded borders and increase the bottom margin */
+        .navbar {
+            margin-bottom: 50px;
+            border-radius: 0;
+        }
+
+        /* Remove the jumbotron's default bottom margin */
+        .jumbotron {
+            margin-bottom: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 25px;
+        }
+    </style>
 </head>
 <body>
 
-<h1>My Tool Store</h1>
 
-<table id="products">
+
+<div class="jumbotron">
+<div class="container text-center">
+    <h1>Shady Online Tool Store</h1>
+    <p>Selling Hardware that will last until you can come back. <img class="silly" src="/image/silly.jpg" alt="silly face"></p>
+</div>
+</div>
+
+<div class= "back">
+<table id="products" align="center">
     <thead>
         <tr>
             <th>Title</th>
@@ -21,7 +51,7 @@
 </table>
 
 <button onClick="window.location.reload();">Refresh</button>
-
+</div>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
